@@ -8,7 +8,10 @@ import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 import reducers from './scripts/reducers';
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+import thunk from "redux-thunk";
+import logger from "redux-logger";
+
+const createStoreWithMiddleware = applyMiddleware(thunk, logger)(createStore);
 
 ReactDOM.render(
     <Provider store={createStoreWithMiddleware(reducers)}>
