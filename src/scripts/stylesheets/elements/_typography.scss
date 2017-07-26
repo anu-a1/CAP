@@ -1,0 +1,60 @@
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  padding-top: 15px;
+}
+
+h3 {
+  color: $black;
+  font-family: $font-semibold;
+  font-size: 18px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+b,
+strong {
+  font-family: $font-semibold;
+  font-weight: normal;
+}
+
+i {
+  font-family: $font-italic;
+  font-style: normal;
+}
+
+a {
+  color: $cerulean-four;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    outline: none;
+  }
+
+  &:hover {
+    color: $marine-blue;
+  }
+
+  &:focus {
+    color: $cerulean-four;
+  }
+
+  &.dashed-link {
+    color: $cerulean-four;
+    font-size: 13px;
+    line-height: 1;
+    border-bottom: 1px dashed $cerulean-four;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+  }
+}
+
+abbr[title] {
+  border: none;
+}

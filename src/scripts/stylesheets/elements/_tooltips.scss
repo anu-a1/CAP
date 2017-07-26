@@ -1,0 +1,110 @@
+.tooltip {
+  color: $greyish-brown-two;
+  font-size: 12px;
+  font-family: $font-italic;
+
+  &.in {
+    opacity: 1;
+  }
+
+  &.right {
+    padding-left: 6px;
+    .tooltip-arrow {
+      margin-top: -6px;
+      border-width: 6px 6px 6px 0;
+      border-right-color: rgba(0, 0, 0, 0.1);
+
+      &:after {
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 0;
+        border-bottom: 5px solid transparent;
+        border-right: 5px solid $white;
+        border-top: 5px solid transparent;
+        left: 1px;
+        margin-top: -5px;
+        content: '';
+        pointer-events: none;
+      }
+    }
+  }
+
+  &.top {
+    padding-bottom: 6px;
+    .tooltip-arrow {
+      margin-left: -6px;
+      border-width: 6px 6px 0;
+      border-top-color: rgba(0, 0, 0, 0.2);
+
+      &:after {
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid $white;
+        bottom: 1px;
+        margin-left: -5px;
+        content: '';
+        pointer-events: none;
+      }
+    }
+  }
+
+  &.left {
+    padding-right: 6px;
+    .tooltip-arrow {
+      margin-top: -6px;
+      border-width: 6px 0 6px 6px;
+      border-left-color: rgba(0, 0, 0, 0.1);
+
+      &:after {
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 0;
+        border-bottom: 5px solid transparent;
+        border-left: 5px solid $white;
+        border-top: 5px solid transparent;
+        right: 1px;
+        margin-top: -5px;
+        content: '';
+        pointer-events: none;
+      }
+    }
+  }
+
+  &.bottom {
+    padding-top: 6px;
+
+    .tooltip-arrow {
+      margin-left: -6px;
+      border-width: 0 6px 6px;
+      border-bottom-color: rgba(0, 0, 0, 0.1);
+
+      &:after {
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 5px solid $white;
+        top: 1px;
+        margin-left: -5px;
+        content: '';
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+.tooltip-inner {
+  color: $greyish-brown-two;
+  background-color: $white;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  padding: 5px 15px;
+}

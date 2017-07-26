@@ -1,0 +1,36 @@
+@import "components/_header";
+@import "components/_fig";
+@import "components/_home";
+@import "components/_allocationTable";
+
+
+
+
+.app {
+  position: relative;
+
+  .container-fluid {
+    min-width: 992px;
+
+  }
+}
+
+.app__content {
+  background-color: $white;
+  height: 100%;
+}
+
+
+#footer
+{
+  height: 250px;
+}
+
+@media (min-width: $screen-lg-min) {
+  .app {
+    .container-fluid {
+      padding-right: 50px;
+      padding-left: 50px;
+    }
+  }
+}

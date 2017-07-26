@@ -1,0 +1,63 @@
+.block-collapsible-nav {
+  color: $brownish-grey;
+  font-size: 14px;
+  font-family: $font-semibold;
+  background-color: transparent;
+  padding: 0;
+  margin-bottom: 6px;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &:active:focus,
+  &[disabled]:hover,
+  &:focus:hover,
+  &[disabled]:focus:hover,
+  &:focus:active,
+  &:focus:active:focus,
+  &:focus:focus:hover,
+  &:focus:focus:active,
+  &:focus:focus:active:focus,
+  &:focus[disabled]:hover,
+  &:focus:focus[disabled]:hover,
+  &:focus[disabled]:focus:hover,
+  &:focus[disabled]:focus:active,
+  &:focus[disabled]:focus:active:focus,
+  &:focus[disabled]:focus[disabled]:hover,
+  &[disabled]:focus:active,
+  &[disabled]:focus:active:focus,
+  &[disabled]:focus[disabled]:hover {
+    color: $brownish-grey;
+    background-color: transparent;
+  }
+
+  .caret {
+    color: $nice-blue;
+    margin-right: 10px;
+    transform: rotate(-90deg);
+    transition: transform 0.5s;
+    margin-top: -2px;
+  }
+
+  &.is-open {
+    .caret {
+      transform: rotate(0deg);
+    }
+  }
+}
+
+.modal .btn.block-collapsible-nav {
+  font-family: $font-semibold;
+}
+
+.block-collapsible-content {
+  background-color: $white;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  margin-bottom: 15px;
+
+  .panel-body {
+    padding: 0;
+  }
+}

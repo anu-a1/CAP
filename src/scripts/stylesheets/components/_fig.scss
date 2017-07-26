@@ -1,0 +1,15 @@
+@import "../elements/_vars";
+
+.container-blue {
+  padding: 20px;
+  background-color: $pale-grey-four;
+  border: 1px solid $light-blue-grey-five;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 18px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+

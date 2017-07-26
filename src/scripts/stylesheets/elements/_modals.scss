@@ -1,0 +1,214 @@
+.modal-backdrop.in {
+  filter: alpha(opacity=70);
+  opacity: 0.7;
+}
+
+.modal-dialog {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+
+  .alert {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}
+
+.modal {
+  text-align: center;
+  &:before {
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    content: '';
+  }
+
+  .form-checkbox {
+    margin-bottom: 6px;
+
+    .checkbox {
+      vertical-align: top;
+
+      label {
+        color: $brownish-grey;
+      }
+    }
+  }
+
+  .btn {
+    font-family: $font-regular;
+  }
+}
+
+.modal-content {
+  border: none;
+  border-radius: 10px;
+}
+
+.modal-header {
+  border: none;
+  padding: 20px 20px 12px 20px;
+}
+
+.modal-title {
+  color: $black;
+  font-size: 18px;
+  font-family: $font-semibold;
+  text-transform: capitalize;
+}
+
+.modal-body {
+  padding: 0 20px 20px;
+
+  form {
+    .alert {
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.modal-header .close {
+  color: $white;
+  font-family: 'icomoon' !important;
+  font-size: 18px;
+  font-weight: 400;
+  height: 20px;
+  width: 19px;
+  float: none;
+  top: -28px;
+  right: -29px;
+  position: absolute;
+  opacity: 1;
+  outline: none;
+  text-shadow: none;
+  overflow: hidden;
+  @extend .icon-close-popup;
+
+  & > span {
+    display: none;
+  }
+}
+
+.modal-buttons {
+  padding-top: 15px;
+  text-align: right;
+
+  .btn {
+    width: 120px;
+    margin-left: 10px;
+  }
+}
+
+.form-group-radio-btn {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 20px;
+}
+
+/* Various modals */
+/* Manage Attr modal */
+
+.modal-manage-attr {
+  .form-group {
+    margin-bottom: 24px;
+  }
+
+  .form-group-clear {
+    width: 92%;
+  }
+
+  .has-error .help-block {
+    top: -22px;
+    right: 34px;
+  }
+
+  .btn-delete {
+    margin-left: 10px;
+    position: absolute;
+    top: 6px;
+    right: 0;
+  }
+
+  .modal-buttons {
+    padding-top: 6px;
+  }
+}
+
+/* Rename/Remove modal */
+
+.modal-rename-node,
+.modal-remove-node {
+  .text-bold {
+    color: $black-three;
+    font-family: $font-semibold;
+    display: block;
+  }
+}
+
+/* Merge Node modal */
+
+.modal-merge-node {
+  .merge-table {
+    margin-bottom: 16px;
+  }
+}
+
+/* Validation Error modal */
+
+.modal-validation-error {
+  .text-bold {
+    color: $black-three;
+    font-family: $font-semibold;
+    display: block;
+  }
+
+  .block-link {
+    margin: 20px 0 10px;
+  }
+
+  .icon-info-btn {
+    color: $cerulean-four;
+    font-size: 22px;
+    margin-right: 14px;
+    vertical-align: middle;
+  }
+
+  .btn {
+    width: 180px;
+  }
+}
+
+/* media */
+@media (min-width: $screen-sm-min) {
+  .modal-dialog {
+    width: 420px;
+    margin-top: 60px;
+  }
+
+  .modal-content {
+    box-shadow: none;
+  }
+
+  .modal-middle {
+    .modal-dialog {
+      width: 640px;
+    }
+  }
+
+  .modal-lg.modal-dialog {
+    width: 640px;
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .modal-lg.modal-dialog {
+    width: 900px;
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .modal-lg.modal-dialog {
+    width: 1080px;
+  }
+}

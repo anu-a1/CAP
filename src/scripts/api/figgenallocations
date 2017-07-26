@@ -1,0 +1,36 @@
+import BaseApi from './base';
+
+
+export default class figgenallocations extends BaseApi{
+
+    prepareFIGGENAllocations(){
+        return this.transport({
+            url: '',
+            method: '',
+            params: {}
+        })
+    }
+
+    getPreparedFIGGENAllocations(){
+        return this.transport({
+            url: '',
+            method: '',
+            params: {}
+        })
+    }
+
+    calculateFIGGENAllocations(){
+        return this.transport({
+            url: '/figgen/calculatedAllocations',
+            method: 'push'
+        })
+    }
+
+    getCalculatedFIGGENAllocations(){
+        return this.transport({
+            url: '/figgen/GetCalculatedAllocations',
+            method: 'get'
+        })
+    }
+
+}

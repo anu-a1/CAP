@@ -1,0 +1,164 @@
+select.form-control,
+.Select-control {
+  padding: 4px 5px 5px 10px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.Select-placeholder,
+.Select-control .Select-value {
+  line-height: 30px;
+}
+
+.is-open > .Select-control .Select-arrow {
+  border-color: transparent transparent $nice-blue;
+  border-width: 0 4px 4px;
+}
+
+.Select-arrow {
+  border-color: $nice-blue transparent transparent;
+  border-width: 4px 4px 2.5px;
+}
+
+.Select-arrow-zone {
+  padding-right: 0;
+  display: block;
+  position: absolute;
+  right: 2px;
+  top: 0;
+  line-height: 28px;
+}
+
+.Select {
+  outline: none;
+  position: relative;
+  width: 100%;
+
+  .icon-lock {
+    color: $greyblue-two;
+    font-size: 12px;
+  }
+  
+  &-control {
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid $silver;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    .Select-value .Select-value-label > div {
+      display: inline-block;
+    }
+  }
+
+  &-input {
+    height: 28px;
+    padding-left: 0;
+
+    &  > input {
+      height: 28px;
+      line-height: 28px;
+      padding: 0;
+    }
+  }
+
+  &-placeholder,
+  &--single > &-control &-value,
+  &-custom-value {
+    line-height: 28px;
+    color: $black-two;
+    margin-right: 28px;
+    padding-right: 0;
+  }
+
+  &-placeholder {
+    color: $greyish-brown-two;
+    font-family: $font-italic;
+    opacity: 0.7;
+  }
+
+  &.is-focused > &-control {
+    outline: 0;
+  }
+
+  &.is-focused:not(.is-open) > .Select-control {
+    border-color: $silver;
+    box-shadow: none;
+  }
+
+  &-menu-outer {
+    z-index: 10;
+    border-color: transparent;
+    box-shadow: 0 2px 3px 0 rgba(0, 103, 156, 0.2);
+    padding: 0 10px 10px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    //position: relative;
+  }
+}
+
+.Select--multi {
+  .Select-control {
+    line-height: 28px;
+  }
+
+  .Select-arrow-zone {
+    top: 0;
+  }
+
+  .Select-value {
+    background-color: $pale-grey-four;
+    border-radius: 2px;
+    border: 1px solid $greyblue-two;
+    color: $nice-blue-two;
+    font-size: 0.9em;
+    line-height: 1.4;
+    margin-left: 5px;
+    margin-top: 0;
+  }
+
+  .Select-custom-value {
+    bottom: 0;
+    left: 0;
+    padding-left: 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.Select-menu {
+  border-top: 1px solid $cloudy-blue;
+  padding-top: 10px;
+
+  .checkbox {
+    vertical-align: top;
+  }
+
+  input[type="checkbox"]:not(:checked) + label,
+  input[type="checkbox"]:checked + label {
+    color: $greyish-brown;
+    line-height: 14px;
+    padding-left: 28px;
+    vertical-align: baseline;
+  }
+}
+
+.is-open > .Select-control {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  background: #fff;
+  border-color: transparent;
+  box-shadow: 0 1px 4px 0 rgba(0, 103, 156, 0.2);
+}
+
+.Select-option {
+  outline: none;
+  &.is-focused {
+    background-color: $light-sky-blue;
+  }
+}
