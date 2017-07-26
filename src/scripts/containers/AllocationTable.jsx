@@ -1,8 +1,8 @@
 import React from 'react';
+import {bindActionCreators} from 'redux';
 import {Button} from "react-bootstrap";
 import {CSVLink} from "react-csv";
 import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
 import Modal from 'react-modal';
 import PropTypes from 'prop-types';
 //import {exceljs} from 'exceljs'
@@ -46,12 +46,18 @@ class AllocationTable extends React.Component {
     //         });
     // }
 
-    render() {
-        let boundActionCreators = bindActionCreators(TodoActionCreators, dispatch)
+    onButtonClickExample = event => {
+        event.preventDefault();
+        this.props.fetchFIGGENAllocations();
+    };
 
+    render() {
+        const {FIGGEN} = this.props;
         return (
 
             <div className="container-blue" >
+
+                <div>use this data: {JSON.stringify(FIGGEN)}</div>
 
                 {/*<Modal isOpen={this.state.modalIsOpen} className = 'alloc_modal' contentLabel="Modal">*/}
                     {/*<h5>Calculating Allocations </h5>*/}
@@ -63,10 +69,14 @@ class AllocationTable extends React.Component {
                         <h5>FIGGEN</h5>
                         <table><tbody>
                             <tr>
-                                <td><Button bsStyle = "primary" bsSize = "large" onClick = {this.test}>Prepare </Button> </td>
+                                <td><Button
+                                    onClick={this.onButtonClickExample}
+                                    bsStyle="primary"
+                                    bsSize="large"
+                                >Prepare </Button> </td>
                                 <td width={20}></td>
 
-                                <td><CSVLink data = {this.props.FIGGEN} onClick = {this.props.fetchFIGGENAllocations}>{<img src={ExcelIcon} alt="logotype" />}</CSVLink></td>
+                                <td><CSVLink data = {[]}>{<img src={ExcelIcon} alt="logotype" />}</CSVLink></td>
                                 <td width={60}></td>
                                 <td><Button bsStyle = "primary" bsSize = "large" onClick = {this.figgenPA}>Calculate </Button> </td>
                                 <td width={20}></td>
@@ -147,22 +157,14 @@ class AllocationTable extends React.Component {
 }
 
 
-function mapStateToProps({FIGGEN})
-{
-   console.log(FIGGEN);
-    return {FIGGEN};//FIGGEN is from combined reducer //ES^ syntax for FIGGEN
+function mapStateToProps({FIGGEN}) {
+    return {
+        FIGGEN//FIGGEN is from combined reducer //ES^ syntax for FIGGEN
+    };
 }
 
-// function mapDispatchToProps(dispatch)
-// {
-//     //console.log(figgenAllocations1());
-//     return bindActionCreators(fetchFIGGENAllocations(dispatch)); //fetchFIGGENAllocations is action creator. Dispatch makes the action flow to reducer
-// }
+const mapDispatchToProps = {
+    fetchFIGGENAllocations
+};
 
-const mapDispatchToProps = (dispatch) => ({
-    fetchFIGGENAllocations: () => dispatch(fetchFIGGENAllocations())
-
-
-});
-
-export default connect(mapStateToProps,mapDispatchToProps) (AllocationTable);
+export default connect(mapStateToProps, mapDispatchToProps) (AllocationTable);
