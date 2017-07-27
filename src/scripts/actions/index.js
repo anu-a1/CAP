@@ -5,27 +5,50 @@ import api from '../api';
 import actionTypes from '../constants/actionTypes'
 
 
-const ROOT_URL = 'http://localhost:5000/figgen/GetPreparedAllocations';
+var ROOT_URL = 'http://localhost:5000/figgen/GetPreparedAllocations';
 
-const FIGGENAllocationsAction = createAction(actionTypes.CALCULATE_FIGGEN_ALLOCATIONS);
+var AllocationsAction = createAction(actionTypes.GET_FIGGEN_ALLOCATIONS);
 
 
-export const fetchFIGGENAllocations = () => {
+export const getFIGGENAllocations = () => {
     return dispatch => (
         axios.get(ROOT_URL)
             .then(res => {
-                dispatch(FIGGENAllocationsAction({
+                dispatch(AllocationsAction({
                     data: res.data,
                     err: null
                 }));
             })
             .catch(err => {
                 //TODO: remove this mock and handle error
-                dispatch(FIGGENAllocationsAction({
-                    data: ['some', 'data'],
+                dispatch(AllocationsAction({
+                    data: ['some', 'data','here'],
                     err: null
                 }));
             })
     );
 };
 
+     ROOT_URL = 'http://localhost:5000/figgen/PrepareAllocations';
+
+    AllocationsAction = createAction(actionTypes.CALCULATE_FIGGEN_ALLOCATIONS);
+
+
+export const postFIGGENAllocations = () => {
+    return dispatch => (
+        axios.get(ROOT_URL)
+            .then(res => {
+                dispatch(AllocationsAction({
+                    data: res.data,
+                    err: null
+                }));
+            })
+            .catch(err => {
+                //TODO: remove this mock and handle error
+                dispatch(AllocationsAction({
+                    data: ['some', 'data','here'],
+                    err: null
+                }));
+            })
+    );
+};
